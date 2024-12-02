@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "public": "out",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/family/**",
+        "destination": "/family/[id]/index.html"
+      }
+    ]
+  }
+}
+
