@@ -4,13 +4,12 @@ import Link from 'next/link'
 import { useAuth } from '@/lib/firebase/auth'
 import { Button } from '@/components/ui/button'
 import { UserNav } from '@/components/user-nav'
-import { ThemeToggle } from '@/components/theme-toggle'
 
 export function Header() {
     const { user, loading } = useAuth()
 
     return (
-        <header className="bg-primary text-primary-foreground">
+        <header className="bg-[var(--primary)] text-white">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
                 <Link href="/" className="text-2xl font-bold">
                     Zoom My Life
@@ -23,7 +22,7 @@ export function Header() {
                                     <>
                                         <li>
                                             <Link href="/dashboard">
-                                                <Button variant="ghost">Dashboard</Button>
+                                                <Button variant="ghost" className="text-white hover:text-[var(--primary-dark)] hover:bg-white">Dashboard</Button>
                                             </Link>
                                         </li>
                                         <li>
@@ -39,12 +38,10 @@ export function Header() {
                                 )}
                             </>
                         )}
-                        <li>
-                            <ThemeToggle />
-                        </li>
                     </ul>
                 </nav>
             </div>
         </header>
     )
 }
+
